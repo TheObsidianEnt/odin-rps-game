@@ -1,8 +1,21 @@
 const choices = ['ROCK', 'PAPER', 'SCISSORS'];
+let playerScore = 0;
+let computerScore = 0;
+
 
 function computerPlay() {
     let rand = choices[Math.floor(Math.random() * choices.length)];
     return rand;
+}
+
+function computerWin() {
+    let computerScore = computerScore++;
+    return computerScore;
+}
+
+function playerWin() {
+    let playerScore = playerScore++;
+    return playerScore;
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -33,6 +46,10 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const playerSelection = "ROCK";
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+// const playerSelection = computerPlay();
+// const computerSelection = computerPlay();
+// console.log(playRound(playerSelection, computerSelection));
+
+function game() {
+    
+}
