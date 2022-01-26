@@ -1,8 +1,8 @@
 // give the computer choices
 const choices = ['ROCK', 'PAPER', 'SCISSORS'];
 // declares scores
-let playerScore = 0;
-let computerScore = 0;
+let playerScore;
+let computerScore;
 
 // lets the computer choose from choices 
 function computerPlay() {
@@ -53,11 +53,16 @@ function playRound(playerSelection, computerSelection) {
         let results = `You win :) ${playerSelection} beats ${computerSelection}!`;
         winCondition('player');
         return results;
+    } else {
+        let results = "Please enter one of the choices from the list of rock, paper, or scissors:";
+        return results;
     }
 }
 
 // main game function
 function game() {
+    playerScore = 0;
+    computerScore = 0;
     while (computerScore < 5 && playerScore < 5) {
         let playerSelection = prompt("Choose rock, paper, or scissors:").toUpperCase();
         const computerSelection = computerPlay();
